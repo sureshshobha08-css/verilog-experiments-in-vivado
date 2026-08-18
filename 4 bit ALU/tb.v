@@ -1,6 +1,6 @@
 module top;
 reg [3:0]a,b,opcode;
-wire [7:0]y;
+wire [3:0]y;
 alu_4bit u1(a,b,opcode,y);
 initial 
 begin 
