@@ -1,6 +1,6 @@
 module alu_4bit(a,b,opcode,y);
 input [3:0]a,b,opcode;
-output reg[7:0]y;
+output reg[3:0]y;
 always@(*)
 begin 
 case(opcode)
@@ -20,7 +20,7 @@ case(opcode)
 4'b1101:y=&a; 
 4'b1110:y=|a; 
 4'b1111:y=~(a^b); 
-default:y=5'bxxxx;
+default:y=4'bxxxx;
 endcase
 end
 endmodule
