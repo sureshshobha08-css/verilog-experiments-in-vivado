@@ -1,1 +1,17 @@
 
+module top;
+reg i0,i1,i2,i3,s0,s1,E;
+wire y;
+mux u1(i0,i1,i2,i3,s0,s1,E,y);
+initial
+begin 
+i0=1'b0;i1=1'b1;i2=1'b0;i3=1'b1;
+E=0;s1=0;s0=0;
+#10;s1=0;s0=1;
+#10;E=1;s1=1;s0=0;
+#10;s1=0;s0=1;
+#10;s1=1;s0=1;
+#10 $finish;
+end
+endmodule
+
