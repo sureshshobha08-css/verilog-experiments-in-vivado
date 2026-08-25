@@ -1,1 +1,11 @@
 
+module mux(input i0,i1,s,output reg y);
+always@(*)
+begin 
+case(s)
+1'b0:y=i0;
+1'b1:y=i1;
+default:y=1'bx;
+endcase 
+end
+endmodule
