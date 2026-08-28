@@ -1,0 +1,40 @@
+module demux(input i,s2,s1,s0,output reg y0,y1,y2,y3,y4,y5,y6,y7);
+always@(*)
+begin
+if({s2,s1,s0}==3'b000)
+begin
+y0=i;y1=0;y2=0;y3=0;y4=0;y5=0;y6=0;y7=0;
+end
+else if({s2,s1,s0}==3'b001)
+begin
+y0=0;y1=i;y2=0;y3=0;y4=0;y5=0;y6=0;y7=0;
+end
+else if({s2,s1,s0}==3'b010)
+begin
+y0=0;y1=0;y2=i;y3=0;y4=0;y5=0;y6=0;y7=0;
+end
+else if({s2,s1,s0}==3'b011)
+begin
+y0=0;y1=0;y2=0;y3=i;y4=0;y5=0;y6=0;y7=0;
+end
+else if({s2,s1,s0}==3'b100)
+begin
+y0=0;y1=0;y2=0;y3=0;y4=i;y5=0;y6=0;y7=0;
+end
+else if({s2,s1,s0}==3'b101)
+begin
+y0=0;y1=0;y2=0;y3=0;y4=0;y5=i;y6=0;y7=0;
+end
+else if({s2,s1,s0}==3'b110)
+begin
+y0=0;y1=0;y2=0;y3=0;y4=0;y5=0;y6=i;y7=0;
+end
+
+else
+begin
+y0=0;y1=0;y2=0;y3=0;y4=0;y5=0;y6=0;y7=i;
+end
+
+
+end
+endmodule
