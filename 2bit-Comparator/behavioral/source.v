@@ -1,1 +1,24 @@
-
+module comparator_2bit(input[1:0]a,b,output reg equal,greater,smaller);
+always@(*)
+begin
+equal=0;greater=0;smaller=0;
+case({a,b})
+4'b0000:equal=1;
+4'b0001:smaller=1;
+4'b0010:smaller=1;
+4'b0011:smaller=1;
+4'b0100:greater=1;
+4'b0101:equal=1;
+4'b0110:smaller=1;
+4'b0111:smaller=1;
+4'b1000:greater=1;
+4'b1001:greater=1;
+4'b1010:equal=1;
+4'b1011:smaller=1;
+4'b1100:greater=1;
+4'b1101:greater=1;
+4'b1110:greater=1;
+4'b1111:equal=1;
+endcase
+end
+endmodule
