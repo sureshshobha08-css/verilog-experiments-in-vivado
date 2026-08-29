@@ -2,11 +2,11 @@ module comparator_1bit(input a,b,output reg equal,greater,smaller);
 always@(*)
 begin
 equal=0;greater=0;smaller=0;
-if(a==b)
-equal=~(a^b);
-else if(a>b)
-greater=a&(~b);
-else 
-smaller=~a&b;
+case({a,b})
+2'b00:equal=1;
+2'b01:smaller=1;
+2'b10:greater=1;
+2'b11:equal=1;
+endcase
 end
 endmodule
